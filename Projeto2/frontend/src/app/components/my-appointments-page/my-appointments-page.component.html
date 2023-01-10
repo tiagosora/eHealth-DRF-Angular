@@ -1,0 +1,27 @@
+
+<div style="height: calc(100vh - 169px);" *ngIf="appointments">
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Department</th>
+                <th>Date</th>
+                <th>Mensage</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let appointment of appointments" >
+                <td>{{ appointment.department }}</td>
+                <td>{{ appointment.date }}</td>
+                <td>{{ appointment.message }}</td>
+                <td style="padding-left:auto;padding-right:auto;">
+                    <a  class="nav-link" routerLink="updateappointment/{{appointment.id}}" class="nav-link"><mat-icon>refresh</mat-icon></a>
+                </td>
+                <td>
+                    <a (click)="deleteAppointment(appointment.id)" class="nav-link"><mat-icon>delete</mat-icon></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

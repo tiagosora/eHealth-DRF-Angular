@@ -1,0 +1,53 @@
+
+<!-- Section -->
+<section class="section style-three pb-40">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 order-1 order-lg-0">
+        <div class="contact-area style-two pl-0 pr-0 pr-lg-4">
+          <div class="section-title" style="padding: 0 10%;">
+            <h3>Create <span>Prescription</span></h3>
+          </div>
+          <form class="default-form contact-form" [formGroup]="profileForm">
+            <mat-form-field>
+              <textarea
+                formControlName="patientId"
+                matInput
+                placeholder="Patient Identifier"
+              ></textarea>
+            </mat-form-field>
+            <mat-form-field>
+              <textarea
+                formControlName="message"
+                matInput
+                placeholder="Message"
+              ></textarea>
+            </mat-form-field>
+            <div class="row form-group">
+              <div class="container-login100-form-btn" style="height: 10px; padding-top: 20px" >
+                <button (click)="saveForm()" class="btn-style-one">
+                  Add Prescription
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-6 mb-4 mb-lg-0 order-0 order-lg-1">
+        <div class="appointment-image-holder ml-0 ml-lg-4">
+          <figure>
+            <img
+              loading="lazy"
+              class="w-100"
+              src="assets/images/gallery/gallery-06.jpg"
+              alt="Appointment"
+            />
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Section -->
+
+

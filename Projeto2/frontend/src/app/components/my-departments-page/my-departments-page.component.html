@@ -1,0 +1,39 @@
+<div style="height: calc(100vh - 169px);">
+
+    <mat-form-field appearance="fill" style="width:40%; margin-left:10%; margin-top:30px">
+        <mat-label>Select A Department</mat-label>
+        <mat-select  #mapOption (selectionChange)="selectChange(mapOption)" >
+            <mat-option *ngFor="let d of departments" [value]="d.name">
+            {{d.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div class="section-title" style="margin-left:20%; margin-top:30px">
+        <div *ngIf="departmentName != ''">
+                <h1>Appointments for {{departmentName}}</h1>
+        </div>
+        <div *ngIf="departmentName == ''">
+            <h1><mat-icon>error</mat-icon> Deparment not selected</h1>
+        </div>
+    </div>
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Patient Id</th>
+                <th>Department</th>
+                <th>Date</th>
+                <th>Mensage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let appointment of appointments">
+                <td>{{ appointment.patient }}</td>
+                <td>{{ appointment.department }}</td>
+                <td>{{ appointment.date }}</td>
+                <td>{{ appointment.message }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

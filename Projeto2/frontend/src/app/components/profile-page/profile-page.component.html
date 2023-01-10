@@ -1,0 +1,88 @@
+<div style="min-height: calc(100vh - 160px);">
+<div class="container rounded bg-white mt-5 mb-5" style="color: black; box-shadow: 0px 7px 8px -4px rgb(0 0 0 / 20%), 0px 12px 17px 2px rgb(0 0 0 / 14%), 0px 5px 22px 4px rgb(0 0 0 / 12%);">
+    <div class="row" style="background-color: #ffffff" *ngIf="userType == 'patient'">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="assets/images/favicon.png">
+            <span class="text-black-50">WELCOME</span>
+            <span class="font-weight-bold">P A T I E N T</span>
+            <span> </span></div>
+        </div>
+        <div class="col-md border-right">
+            <form [formGroup]="profilePatientForm">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h1 class="text-right">PROFILE</h1> 
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6"><label class="labels">FIRST NAME</label><input type="text" class="form-control" placeholder="{{ user.first_name }}" value="" formControlName="first_name"></div>
+                        <div class="col-md-6"><label class="labels">LAST NAME</label><input type="text" class="form-control" value="" placeholder="{{ user.last_name }}" formControlName="last_name"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">EMAIL</label><input type="text" class="form-control" placeholder="{{ user.email }}" value="" formControlName="email"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6"><label class="labels">PASSWORD</label><input type="text" class="form-control" placeholder="**********" value="" formControlName="password"></div>
+                        <div class="col-md-6"><label class="labels">REPEAT PASSWORD</label><input type="text" class="form-control" placeholder="**********" value="" formControlName="repassword"></div>
+                    </div>
+                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" (click)="patientFormSave()" type="button">Save Profile</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row" style="background-color: #ffffff" *ngIf="userType == 'doctor'">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="assets/images/favicon.png">
+            <span class="text-black-50">WELCOME</span>
+            <span class="font-weight-bold">D O C T O R</span>
+            <span> </span></div>
+        </div>
+        <div class="col-md border-right">
+            <form [formGroup]="profileDoctorForm">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h1 class="text-right">PROFILE</h1> 
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6"><label class="labels">FIRST NAME</label><input type="text" class="form-control" placeholder="{{ user.first_name }}" value="" disabled></div>
+                        <div class="col-md-6"><label class="labels">LAST NAME</label><input type="text" class="form-control" value="" placeholder="{{ user.last_name }}" disabled></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">EMAIL</label><input type="text" class="form-control" placeholder="{{ user.email }}" value="" disabled></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6"><label class="labels">PASSWORD</label><input type="text" class="form-control" placeholder="**********" value="" formControlName="password" ></div>
+                        <div class="col-md-6"><label class="labels">REPEAT PASSWORD</label><input type="text" class="form-control" placeholder="**********" value="" formControlName="repassword"></div>
+                    </div>
+                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" (click)="doctorFormSave()" type="button">Save New Password</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row" style="background-color: #ffffff" *ngIf="userType == 'dean'">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="assets/images/favicon.png">
+            <span class="text-black-50">WELCOME</span>
+            <span class="font-weight-bold">D O C T O R</span>
+            <span> </span></div>
+        </div>
+        <div class="col-md border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h1 class="text-right">PROFILE</h1> 
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6"><label class="labels">FIRST NAME</label><input type="text" class="form-control" placeholder="{{ user.first_name }}" value="" disabled></div>
+                    <div class="col-md-6"><label class="labels">LAST NAME</label><input type="text" class="form-control" value="" placeholder="{{ user.last_name }}" disabled></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">EMAIL</label><input type="text" class="form-control" placeholder="{{ user.email }}" value="" disabled></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6"><label class="labels">PASSWORD</label><input type="text" class="form-control" placeholder="**********" value="" disabled></div>
+                    <div class="col-md-6"><label class="labels">ACCOUNT</label><input type="text" class="form-control" value="" placeholder="DEAN" disabled></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,27 @@
+
+<div style="height: calc(100vh - 169px);" *ngIf="prescriptions">
+    <div class="container-login100-form-btn" style="height: 10px; padding-top: 1%" *ngIf="userType == 'doctor'">
+        <button class="btn-style-one" routerLink="/createprescription" routerLinkActive="active" ariaCurrentWhenActive="page">
+            Add Prescription
+        </button>
+    </div>
+    <table class="styled-table" style="margin-top:4%">
+        <thead>
+            <tr>
+                <th *ngIf="userType === 'doctor'">Patient</th>
+                <th *ngIf="userType === 'patient'">Doctor</th>
+                <th>Date</th>
+                <th>Mensage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let prescription of prescriptions" >
+                <td *ngIf="userType == 'doctor'">{{ prescription.patient }}</td>
+                <td *ngIf="userType == 'patient'">{{ prescription.doctor }}</td>
+                <td>{{ prescription.date }}</td>
+                <td>{{ prescription.message }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div style="height: calc(100vh - 169px);" *ngIf="prescriptions"></div>

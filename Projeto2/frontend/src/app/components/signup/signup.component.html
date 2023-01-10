@@ -1,0 +1,51 @@
+<div class="login-page">
+  <mat-card class="mat-elevation-z12">
+    <mat-card-title style="text-align: center; padding-top: 20px">SIGN UP</mat-card-title>
+        <mat-card-content>
+          <form action= "" [formGroup]="signupForm">
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Full Name"
+                required
+                name="name"
+                formControlName="name">
+              <mat-icon matSuffix>perm_identity</mat-icon>
+              
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Email"
+                required
+                name="email"
+                formControlName="email">
+              <mat-icon matSuffix>email</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Password"
+                type="password"
+                required
+                name="password"
+                formControlName="password">
+              <mat-icon matSuffix>lock</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+                <input
+                matInput
+                placeholder="Repeat Password"
+                type="password"
+                required
+                name="repassword"
+                formControlName="repassword">
+              <mat-icon matSuffix>lock</mat-icon>
+            </mat-form-field>
+            <button mat-raised-button color="" class="login-button login100-form-btn" value="submit" (click)="submitForm()">
+              SIGN UP
+            </button>
+          </form>
+        </mat-card-content>
+  </mat-card>
+</div>

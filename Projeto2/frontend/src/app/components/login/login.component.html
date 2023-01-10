@@ -1,0 +1,36 @@
+<div class="login-page">
+  <mat-card class="mat-elevation-z12">
+    <mat-card-title style="text-align: center; padding-top: 20px">L O G I N</mat-card-title>
+        <mat-card-content>
+          <form action="" [formGroup]="Loginform">
+            <mat-form-field style="align-items: center">
+              <input
+                matInput
+                placeholder="Email"
+                required
+                name="email"
+                formControlName="email"
+              />
+              <mat-icon matSuffix>email</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Password"
+                type="password"
+                required
+                minlength="6"
+                formControlName="password"
+              />
+              <mat-icon matSuffix>lock</mat-icon>
+            </mat-form-field>
+            <span class="gotosignup txt1 p-b-9">Don't have an account?
+              <a class="txt2" routerLink="/signup" routerLinkActive="active" ariaCurrentWhenActive="page" >Sign up now</a>
+            </span>
+            <button mat-raised-button color="" class="login-button login100-form-btn" (click)="submitForm()">
+              Sign In
+            </button>
+          </form>
+        </mat-card-content>
+  </mat-card>
+</div>
